@@ -6,7 +6,9 @@
           <sidebar-button :iconName="item.name" :buttonText="item.text" />
         </div>
       </div>
-      <div id="content"></div>
+      <div id="content">
+        <middle-page />
+      </div>
     </div>
     <!-- <div id="nav">
       <router-link to="/">Home</router-link> |
@@ -18,11 +20,13 @@
 
 <script>
 import SidebarButton from '@/components/SidebarButton'
+import MiddlePage from './views/MiddlePage'
 
 export default {
   name: 'app',
   components: {
-    SidebarButton
+    SidebarButton,
+    MiddlePage
   },
   data: () => ({
     btn_list: [
@@ -60,7 +64,8 @@ body {
   width: 15%;
   height: 100%;
   vertical-align: top;
-  background-color: brown;
+  background-color: #2d2d2d;
+  text-align: center
 }
 
 #content {

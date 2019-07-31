@@ -1,6 +1,6 @@
 <template>
   <div class="button-container">
-    <icon :name="iconName" scale="100" style="color:#010101"></icon>
+    <icon :name="iconName" scale="100" style="fill: #05CE7C;"></icon>
     <p>{{ buttonText }}</p>
   </div>
 </template>
@@ -15,9 +15,14 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
+.svg-icon:active {
+  fill: #ffffff
+}
+
 .button-container {
-  width: 100px;
   height: 100px;
+  color: #ffffff;
+  background-color: gray
 }
 </style>
