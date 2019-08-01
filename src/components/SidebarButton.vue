@@ -1,6 +1,6 @@
 <template>
   <button class="button-container">
-    <icon :name="iconName" scale="100" style="fill: #05CE7C;"></icon>
+    <slot></slot>
     <p>{{ buttonText }}</p>
   </button>
 </template>

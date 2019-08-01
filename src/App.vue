@@ -2,8 +2,9 @@
   <div id="app">
     <div id="outer-container">
       <div id="sidebar">
-        <div v-for="(item, index) in btn_list" :key="index">
-          <sidebar-button :iconName="item.name" :buttonText="item.text" />
+        <div class="sidebar-button">
+          <IconHome />
+          <p>首頁</p>
         </div>
       </div>
       <div id="content">
@@ -19,14 +20,14 @@
 </template>
 
 <script>
-import SidebarButton from '@/components/SidebarButton'
 import MiddlePage from './views/MiddlePage'
+import IconHome from '@/assets/icon/icon-home.svg'
 
 export default {
   name: 'app',
   components: {
-    SidebarButton,
-    MiddlePage
+    MiddlePage,
+    IconHome
   },
   data: () => ({
     btn_list: [
@@ -66,12 +67,16 @@ body {
   height: 100%;
   vertical-align: top;
   background-color: #2d2d2d;
-  text-align: center
+  text-align: center;
 }
 
 #content {
   display: table-cell;
   width: 85%;
   vertical-align: top;
+}
+
+.sidebar-button {
+  background-color: darkslategrey;
 }
 </style>
