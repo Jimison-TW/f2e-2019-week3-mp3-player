@@ -31,8 +31,9 @@ export default {
   data: () => ({
     btn_list: [
       { name: 'icon-home', text: '首頁' },
-      { name: 'icon-home', text: '首頁' },
-      { name: 'icon-home', text: '首頁' }
+      { name: 'icon-home', text: '最愛' },
+      { name: 'icon-home', text: '清單' },
+      { name: 'icon-home', text: '設定' }
     ]
   })
 }

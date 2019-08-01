@@ -1,8 +1,8 @@
 <template>
-  <div class="button-container">
+  <button class="button-container">
     <icon :name="iconName" scale="100" style="fill: #05CE7C;"></icon>
     <p>{{ buttonText }}</p>
-  </div>
+  </button>
 </template>
 
 <script>
@@ -17,12 +17,12 @@ export default {
 
 <style>
 .svg-icon:active {
-  fill: #ffffff
+  fill: #ffffff;
 }
 
 .button-container {
   height: 100px;
   color: #ffffff;
-  background-color: gray
+  background-color: gray;
 }
 </style>

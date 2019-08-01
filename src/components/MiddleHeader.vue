@@ -16,9 +16,10 @@ export default {
 
 <style scoped>
 img {
-  width: 100px;
-  height: 100px;
+  width: 59px;
+  height: 59px;
   border-radius: 50%;
+  margin-left: 50px;
 }
 
 span {
@@ -28,6 +29,6 @@ span {
 }
 
 .header-style {
-  background-color:darkgreen;
+  background-color: darkgreen;
 }
 </style>
