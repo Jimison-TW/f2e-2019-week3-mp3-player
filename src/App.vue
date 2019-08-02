@@ -2,10 +2,7 @@
   <div id="app">
     <div id="outer-container">
       <div id="sidebar">
-        <div class="sidebar-button">
-          <IconHome />
-          <p>首頁</p>
-        </div>
+        <sidebar-area />
       </div>
       <div id="content">
         <middle-page />
@@ -21,21 +18,15 @@
 
 <script>
 import MiddlePage from './views/MiddlePage'
-import IconHome from '@/assets/icon/icon-home.svg'
+import SidebarArea from './components/SidebarArea'
 
 export default {
   name: 'app',
   components: {
     MiddlePage,
-    IconHome
+    SidebarArea
   },
   data: () => ({
-    btn_list: [
-      { name: 'icon-home', text: '首頁' },
-      { name: 'icon-home', text: '最愛' },
-      { name: 'icon-home', text: '清單' },
-      { name: 'icon-home', text: '設定' }
-    ]
   })
 }
 </script>
@@ -74,9 +65,5 @@ body {
   display: table-cell;
   width: 85%;
   vertical-align: top;
-}
-
-.sidebar-button {
-  background-color: darkslategrey;
 }
 </style>
