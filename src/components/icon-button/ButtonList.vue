@@ -2,7 +2,7 @@
   <div>
     <ListNormal v-show="!isActive" />
     <ListActive v-show="isActive" />
-    <p>清單</p>
+    <p :style="{ color: textColor }">清單</p>
   </div>
 </template>
 
@@ -15,13 +15,16 @@ export default {
   props: {
     isActive: Boolean
   },
+  data: () => ({
+    textColor: '#515151'
+  }),
   components: {
     ListNormal,
     ListActive
   },
   watch: {
     isActive: function(newVal, oldVal) {
-      console.log(newVal, oldVal)
+      this.textColor = newVal ? '#ffffff' : '#515151'
     }
   }
 }

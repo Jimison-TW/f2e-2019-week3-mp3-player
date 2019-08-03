@@ -1,9 +1,15 @@
 <template>
   <div class="sidebar-button">
-    <button-home :isActive="buttonState[0]" @click.native="changeState(0)" />
-    <button-favorite :isActive="buttonState[1]" @click.native="changeState(1)"/>
-    <button-list :isActive="buttonState[2]" @click.native="changeState(2)"/>
-    <button-setting :isActive="buttonState[3]" @click.native="changeState(3)"/>
+    <router-link to="/">
+      <button-home :isActive="homeButtonState" @click.native="onClick(0)" />
+    </router-link>
+    <router-link to="/about">
+      <button-favorite :isActive="likeButtonState" @click.native="onClick(1)" />
+    </router-link>
+    <router-link to="/home">
+      <button-list :isActive="listButtonState" @click.native="onClick(2)" />
+    </router-link>
+    <button-setting :isActive="settingButtonState" @click.native="onClick(3)" />
   </div>
 </template>
 
@@ -22,16 +28,30 @@ export default {
     ButtonSetting
   },
   data: () => ({
-    activeNow: 0,
-    buttonState: [true, false, false, false]
+    homeButtonState: true,
+    likeButtonState: false,
+    listButtonState: false,
+    settingButtonState: false
   }),
   methods: {
     changeState: function(index) {
-      console.log(index);
+      console.log(index)
       this.buttonState[this.activeNow] = false
       this.buttonState[index] = true
       this.activeNow = index
-      console.log(this.activeNow,this.buttonState)
+      console.log(this.activeNow, this.buttonState)
+    },
+    onClick: function(index) {
+      this.homeButtonState = index === 0 ? true : false
+      this.likeButtonState = index === 1 ? true : false
+      this.listButtonState = index === 2 ? true : false
+      this.settingButtonState = index === 3 ? true : false
+    },
+    routerPath() {
+      // console.log('click')
+      // console.log(this.$route)
+      // this.$router.push('/home')
+      // console.log(this.$route)
     }
   }
 }

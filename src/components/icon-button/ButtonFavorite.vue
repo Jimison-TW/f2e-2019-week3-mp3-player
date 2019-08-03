@@ -2,7 +2,7 @@
   <div>
     <LikeNormal v-show="!isActive" />
     <LikeActive v-show="isActive" />
-    <p>最愛</p>
+    <p :style="{ color: textColor }">最愛</p>
   </div>
 </template>
 
@@ -15,13 +15,16 @@ export default {
   props: {
     isActive: Boolean
   },
+  data: () => ({
+    textColor: '#515151'
+  }),
   components: {
     LikeNormal,
     LikeActive
   },
   watch: {
     isActive: function(newVal, oldVal) {
-      console.log(newVal, oldVal)
+      this.textColor = newVal ? '#ffffff' : '#515151'
     }
   }
 }

@@ -2,7 +2,7 @@
   <div>
     <SettingNormal v-show="!isActive" />
     <SettingActive v-show="isActive" />
-    <p>設定</p>
+    <p :style="{ color: textColor }">設定</p>
   </div>
 </template>
 
@@ -15,13 +15,16 @@ export default {
   props: {
     isActive: Boolean
   },
+  data: () => ({
+    textColor: '#515151'
+  }),
   components: {
     SettingNormal,
     SettingActive
   },
   watch: {
     isActive: function(newVal, oldVal) {
-      console.log(newVal, oldVal)
+      this.textColor = newVal ? '#ffffff' : '#515151'
     }
   }
 }

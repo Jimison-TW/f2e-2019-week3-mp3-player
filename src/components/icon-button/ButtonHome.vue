@@ -2,7 +2,7 @@
   <div>
     <HomeNormal v-show="!isActive" />
     <HomeActive v-show="isActive" />
-    <p>首頁</p>
+    <p :style="{ color: textColor }">首頁</p>
   </div>
 </template>
 
@@ -15,19 +15,16 @@ export default {
   props: {
     isActive: Boolean
   },
-  data:()=>({
-    
+  data: () => ({
+    textColor: '#ffffff'
   }),
   components: {
     HomeNormal,
     HomeActive
   },
   watch: {
-    '$props': {
-      handler:function(val,oldVal){
-        console.log('watch',val)
-      },
-      deep:true
+    isActive: function(newVal, oldVal) {
+      this.textColor = newVal ? '#ffffff' : '#515151'
     }
   }
 }

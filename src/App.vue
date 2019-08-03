@@ -5,7 +5,8 @@
         <sidebar-area />
       </div>
       <div id="content">
-        <middle-page />
+        <!-- <middle-page /> -->
+         <router-view/>
       </div>
     </div>
     <!-- <div id="nav">
